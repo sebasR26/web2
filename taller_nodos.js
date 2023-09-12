@@ -55,3 +55,8 @@ for (let x=0; x<agregarps.length; x++){
     
 }
 
+let div = document.querySelector("div");
+let p = document.createElement("p");
+p.textContent = "mejor amigo xd"
+
+div.appendChild(p);
