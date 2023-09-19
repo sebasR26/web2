@@ -4,7 +4,7 @@ function mostrarResultado() {
     var saborSeleccionado = select.value;
 
     if (saborSeleccionado === "") {
-        resultado.textContent = ""; // Si no se selecciona nada, borrar el contenido.
+        resultado.textContent = ""; 
     } else {
         resultado.textContent = "Sabor seleccionado: " + saborSeleccionado;
     }
