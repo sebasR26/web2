@@ -191,4 +191,39 @@ function editarPedido(pos){
     observaciones.value = "";
 
     })
+    
 }
+
+document.addEventListener("keyup", e=>{
+
+    if (e.target.matches("#buscador")){
+  
+        if (e.key ==="Escape")e.target.value = ""
+  
+        document.querySelectorAll(".articulo").forEach(fruta =>{
+  
+            fruta.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+              fruta.classList.remove("filtro")
+              fruta.classList.add("filtro")
+        })
+  
+    }
+  
+  
+  })
+
+  document.addEventListener("keyup", e => {
+    if (e.target.matches("#buscador")) {
+        const textoBusqueda = e.target.value.toLowerCase();
+        const filas = document.querySelectorAll(".table tbody tr");
+
+        filas.forEach(fila => {
+            const contenidoFila = fila.textContent.toLowerCase();
+            if (contenidoFila.includes(textoBusqueda)) {
+                fila.style.display = "table-row"; // Muestra la fila si coincide con la búsqueda
+            } else {
+                fila.style.display = "none"; // Oculta la fila si no coincide con la búsqueda
+            }
+        });
+    }
+});
